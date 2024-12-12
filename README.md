@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+## [Deploy](https://vitali007tut.github.io/ToDoReact/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Веб-приложение ToDo на React
 
-Currently, two official plugins are available:
+Цель:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Проверить навыки работы с React, включая управление состоянием, компонентную структуру, и использование Local Storage.
 
-## Expanding the ESLint configuration
+- Описание задания:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Создайте простое веб-приложение ToDo для управления задачами. Приложение должно позволять пользователю добавлять задачи, отмечать их как выполненные, удалять и фильтровать по статусу. Задачи также должны сохраняться при перезагрузке страницы.
 
-- Configure the top-level `parserOptions` property like this:
+- Технические требования:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Стек: React, HTML, CSS.
+Управление состоянием: Используйте хуки useState и useEffect.
+Компоненты: Приложение должно быть разбито на несколько компонентов.
+Браузерное API: Используйте Local Storage для сохранения данных.
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## Основные функции:
+- Добавление задач:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Поле ввода для добавления новой задачи.
+Кнопка "Добавить".
+Запрещено добавлять пустые задачи (валидация).
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Отображение задач:
+
+Список задач должен отображаться на экране.
+Каждая задача содержит текст и может быть отмечена как выполненная (галочка или чекбокс).
+
+- Фильтрация задач:
+
+Фильтр (например, кнопки или выпадающий список) позволяет отобразить только выполненные, невыполненные или все задачи.
+При смене фильтрации список задач должен обновляться.
+
+- Удаление задач:
+
+Кнопка для удаления задачи из списка.
+
+- Сохранение данных:
+
+Используйте Local Storage для хранения задач, чтобы они сохранялись при перезагрузке страницы.
+Дополнительные функции (по желанию):
+Возможность редактирования текста задачи.
+Сортировка задач по дате создания.
+Использование TypeScript для типизации (если знакомы с ним).
+
+---
+Примерная структура компонентов:
+
+App – основной компонент, управляющий состоянием и рендерящий остальные компоненты.
+TaskInput – компонент для ввода новой задачи.
+TaskList – компонент, отображающий список задач.
+Task – компонент для отдельной задачи, с функциями отметки выполнения и удаления.
+TaskFilter – компонент для фильтрации задач.
+Критерии оценки:
+Корректность работы с состоянием и хуками React.
+Логичность и структурированность кода, следование best practices.
+Разделение приложения на компоненты.
+Читабельность кода и понятность интерфейса.
+
+- Ожидаемый результат:
+
+Готовое веб-приложение ToDo на React, которое позволяет:
+
+Добавлять, отображать, отмечать, удалять задачи.
+Фильтровать задачи по статусу.
+Сохранять задачи в Local Storage для сохранения данных между сеансами.
