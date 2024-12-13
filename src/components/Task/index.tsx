@@ -3,14 +3,7 @@ import { Button, Checkbox, Input, Typography } from "antd";
 import { DeleteOutlined } from "@ant-design/icons";
 import * as sx from "./styles";
 import { getTasks, setItems } from "../../utils/lsServise";
-
-export type TypeTask = {
-  id: number;
-  title: string;
-  completed: boolean;
-  onDelete: (id: number) => void;
-  onComplete: (id: number) => void;
-};
+import { TypeTask } from "../../types";
 
 export const Task = ({
   id,
@@ -51,7 +44,7 @@ export const Task = ({
         {isEditing && (
           <>
             <Input
-              style={{ marginLeft: 8, marginRight: 8, flex: 1 }}
+              style={sx.input}
               placeholder="Type..."
               value={editedText}
               onChange={changeTextHandler}

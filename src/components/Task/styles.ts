@@ -24,3 +24,9 @@ export const text = (isCompleted: boolean) => {
     alignItems: "center",
   };
 };
+
+export const input = { 
+  marginLeft: 8, 
+  marginRight: 8, 
+  flex: 1 
+}

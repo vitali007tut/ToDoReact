@@ -1,4 +1,4 @@
-import { TypeList } from "../components/TaskList"
+import { TypeList } from "../types"
 
 export const setItems = (tasks: TypeList) => {
     localStorage.setItem('tasks', JSON.stringify(tasks))

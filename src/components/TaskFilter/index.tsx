@@ -1,6 +1,5 @@
 import { Tabs } from "antd";
-
-export type FilterKey = 'all' | 'todo' | 'completed';
+import { FilterKey } from "../../types";
 
 type TypeFilter = {
   onFilter: (activeKey: FilterKey) => void;

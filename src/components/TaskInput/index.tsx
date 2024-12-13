@@ -1,5 +1,6 @@
 import { Button, Input, Space, Typography } from "antd";
 import { useState } from "react";
+import * as sx from "./styles";
 
 type TypeInput = {
   addTask: (value: string) => void;
@@ -23,7 +24,7 @@ export const TaskInput = ({ addTask }: TypeInput) => {
 
   return (
     <>
-      <h3 className="adding__add-tittle">Add Item</h3>
+      <h3 style={sx.title}>Add Item</h3>
       <Space.Compact style={{ width: "100%" }}>
         <Input
           placeholder="Type here..."

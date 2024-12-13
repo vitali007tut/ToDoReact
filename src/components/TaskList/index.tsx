@@ -1,16 +1,7 @@
 import { Task } from "../Task";
-import { Empty, Typography } from "antd";
-
-export type TypeList = {
-  id: number;
-  title: string;
-  completed: boolean;
-}[];
-
-export type TypeFilter = {
-  todo: boolean;
-  completed: boolean;
-};
+import { Empty } from "antd";
+import * as sx from "./styles";
+import { TypeFilter, TypeList } from "../../types";
 
 export const TaskList = ({
   tasks,
@@ -30,7 +21,7 @@ export const TaskList = ({
     <>
       {filterTasks.todo && (
         <>
-          <Typography.Paragraph className="tittle">ToDo</Typography.Paragraph>
+          <h3 style={sx.title}>ToDo</h3>
           {tasksToDo.map((task) => (
             <Task
               key={task.id}
@@ -47,9 +38,7 @@ export const TaskList = ({
 
       {filterTasks.completed && (
         <>
-          <Typography.Paragraph className="tittle">
-            Completed
-          </Typography.Paragraph>
+          <h3 style={sx.title}>Completed</h3>
           {tasksCompleted.map((task) => (
             <Task
               key={task.id}
